@@ -1,9 +1,5 @@
-"use client";
-import CardComponent from "@/components/CardComponent";
-import { Search } from "lucide-react";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Card } from "@/components/ui/card";
+import React, { useEffect, useState } from "react";
+import { Card } from "./ui/card";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 
-const SearchBox = ({data}) => {
+const SearchBox = () => {
   const [company, setCompany] = useState("");
   const [category, setCategory] = useState("");
   const [topn, setTopn] = useState<number>();
@@ -121,57 +117,4 @@ const SearchBox = ({data}) => {
   );
 };
 
-export default function Home() {
-  const data = [
-    {
-      productName: "Laptop1",
-      price: 1000,
-      rating: 4.5,
-      discount: 10,
-      availability: "yes",
-    },
-    {
-      productName: "Laptop1",
-      price: 1000,
-      rating: 4.5,
-      discount: 10,
-      availability: "yes",
-    },
-    {
-      productName: "Laptop1",
-      price: 1000,
-      rating: 4.5,
-      discount: 10,
-      availability: "yes",
-    },
-    {
-      productName: "Laptop1",
-      price: 1000,
-      rating: 4.5,
-      discount: 10,
-      availability: "yes",
-    },
-  ];
-  return (
-    <div className="p-5 md:p-10">
-      <div className="text-4xl font-bold flex justify-center">
-        E commerce company
-      </div>
-      <div className="flex justify-start space-x-5 border rounded-full px-5 py-2 my-5">
-        <Search />
-        <div className="font-semibold text-lg">Search</div>{" "}
-      </div>
-      <SearchBox />
-      {data.map((item, index: number) => (
-        <CardComponent
-          key={index}
-          productName={item.productName}
-          price={item.price}
-          rating={item.rating}
-          discount={item.discount}
-          availabilty={item.availability}
-        />
-      ))}
-    </div>
-  );
-}
+export default SearchBox;

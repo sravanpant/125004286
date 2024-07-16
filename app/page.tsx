@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 
-const SearchBox = ({data}) => {
+const SearchBox = () => {
   const [company, setCompany] = useState("");
   const [category, setCategory] = useState("");
   const [topn, setTopn] = useState<number>();
